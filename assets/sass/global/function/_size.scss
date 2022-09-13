@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@use "../setting" as *;
+@use "strip-unit" as *;
+@use "sass:math";
+@use "sass:map";
+
+//  Size
+//---------------------------------------------------------
+// px→em
+@function emSize($size, $baseSize: 16px) {
+  @return math.div(stripUnit($size), stripUnit($baseSize)) * 1em;
+}
+
+// px→rem
+@function remSize($size) {
+  @return math.div(stripUnit($size), 16) * 1rem;
+}
+
+// px→vw
+@function vwSize($size, $window-size) {
+  @return math.div(stripUnit($size), stripUnit($window-size)) * 100vw;
+}
+
+// clamp
+@function clampSize($minFontSize, $maxFontSize, $minWidth, $maxWidth) {
+  $slope: math.div(
+    (stripUnit($maxFontSize) - stripUnit($minFontSize)),
+    stripUnit(map.get($breakpoints, $maxWidth) - map.get($breakpoints, $minWidth))
+  );
+  $yAxisIntersection: stripUnit(map.get($breakpoints, $minWidth)) * -1 * $slope + stripUnit($minFontSize);
+  @return clamp(remSize($minFontSize), remSize($yAxisIntersection) + ($slope * 100vw), remSize($maxFontSize));
+}
+
+// line-height
+@function lhSize($height, $size) {
+  @return math.div(stripUnit($height), stripUnit($size));
+}
+
+// letter-spacing
+@function lsSize($av-size) {
+  @return math.div($av-size, 1000) * 1em;
+}
+
+// 呼び出し方メモ
+// font-size: remSize(24);
+// font-size: clampSize(44, 56, xxs, lg);

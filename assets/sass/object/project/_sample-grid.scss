@@ -1,0 +1,36 @@
+@charset "UTF-8";
+@use "../../global" as *;
+
+/* //////////  Sample - Grid  ////////// */
+.p-sampleGrid {
+  &__item {
+    position: relative;
+  }
+
+  &__item:hover &__desc {
+    opacity: 1;
+  }
+
+  &__desc {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: remSize(16px);
+    background-color: rgba($gray-400, 0.9);
+    color: $white;
+    font-size: remSize(10px);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.25s $easeOutSine;
+
+    @include mq(md) {
+      padding: remSize(18px);
+      font-size: remSize(12px);
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}

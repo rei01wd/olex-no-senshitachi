@@ -1,0 +1,12 @@
+@charset "UTF-8";
+@use "sass:math";
+@use "../setting" as *;
+
+//  Strip Unit
+//---------------------------------------------------------
+@function stripUnit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+  @return $number;
+}

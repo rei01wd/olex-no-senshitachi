@@ -1,0 +1,83 @@
+@charset "UTF-8";
+@use "../../global" as *;
+
+/* //////////  Global Nav  ////////// */
+.p-globalNav {
+  position: relative;
+  z-index: 10;
+  font-size: remSize(32px);
+  color: inherit;
+  transition: transform 0.2s $easeOutSine;
+  transform: scale(0.8);
+
+  @include mq(lg) {
+    display: flex;
+    align-items: center;
+    font-size: remSize(16px);
+    transform: scale(1);
+
+    & > * + * {
+      margin-left: remSize(24px);
+      margin-left: clampSize(24px, 32px, lg, xxl);
+    }
+  }
+
+  &__list {
+    & + & {
+      margin-top: remSize(40px);
+
+      @include mq(lg) {
+        margin-top: 0;
+      }
+    }
+
+    & > a[href] {
+      position: relative;
+      display: block;
+      letter-spacing: lsSize(40);
+      color: inherit;
+      text-decoration: none;
+      transition: transform 0.25s $easeOutSine;
+      outline: none;
+
+      &:hover,
+      &:focus {
+        transform: translateX(14px);
+
+        @include mq(lg) {
+          transform: translateX(0);
+        }
+      }
+
+      @include mq(lg) {
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          bottom: -12px;
+          left: 0;
+          width: 0;
+          height: 3px;
+          background-color: $white;
+          transition: width 0.2s $easeOutSine;
+        }
+
+        &:hover::before,
+        &:focus::before {
+          @include mq(lg) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__button {
+    margin-top: remSize(80px);
+    text-align: center;
+
+    @include mq(lg) {
+      margin-top: 0;
+    }
+  }
+}

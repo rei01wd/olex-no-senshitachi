@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+//  Layout
+//---------------------------------------------------------
+// Comp
+$sp-comp-width: 375px;
+$pc-comp-width: 1366px;
+
+// Breakpoint
+$breakpoints: (
+  min: 0px,
+  xxs: 360px,
+  xs: 414px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;

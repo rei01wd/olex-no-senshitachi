@@ -1,0 +1,96 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*
+  Base
+--------------------------------------------------------- */
+html {
+  // JS Enabled
+  &.is-jsEnabled {
+    .p-loading {
+      animation: none;
+    }
+
+    // Loading
+    &.is-loaded {
+      height: 100%;
+
+      .p-loading {
+        transition: opacity 0.7s $easeOutSine, visibility 0.7s $easeOutSine;
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  // Resize
+  &.is-resize {
+    .p-drawer,
+    .p-globalNav,
+    .p-buttonHamburger__inner {
+      transition: none;
+    }
+  }
+
+  // Drawer
+  &.is-drawerActive {
+    overflow: hidden;
+
+    @include mq(lg) {
+      overflow: visible;
+    }
+
+    .p-header {
+      mix-blend-mode: normal;
+
+      @include mq(lg) {
+        mix-blend-mode: difference;
+      }
+    }
+
+    .p-drawer {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .p-globalNav {
+      transform: scale(1);
+    }
+
+    .p-buttonHamburger {
+      &:hover .p-buttonHamburger__inner,
+      &:focus .p-buttonHamburger__inner {
+        background-color: transparent;
+
+        &::before,
+        &::after {
+          background-color: $gray-400;
+        }
+      }
+
+      &__inner {
+        background-color: transparent;
+
+        &::before,
+        &::after {
+          background-color: $white;
+        }
+
+        &::before {
+          animation: hamburgerTop 0.3s forwards $easeOutSine;
+        }
+
+        &::after {
+          animation: hamburgerBottom 0.3s forwards $easeOutSine;
+        }
+      }
+    }
+  }
+}
+
+body {
+  font-family: $font-set-primary-en, $font-set-primary-ja, $font-set-secondary;
+  font-weight: 700;
+  background-color: $white;
+  color: $black;
+}

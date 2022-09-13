@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@use "../../global" as *;
+
+/* //////////  Loading  ////////// */
+.p-loading {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  animation: fadeOut 0.5s $easeOutSine 2s 1 both; // JS不可の環境用
+
+  &__title {
+    font-size: remSize(36px);
+    letter-spacing: lsSize(40);
+    line-height: lhSize(54, 36px);
+
+    @include mq(xxs) {
+      font-size: remSize(44px);
+      font-size: clampSize(44px, 96px, xxs, lg);
+    }
+
+    @include mq(lg) {
+      font-size: vwSize(72px, $pc-comp-width);
+    }
+  }
+
+  &__character {
+    display: inline-block;
+    transform: translateX(0);
+    animation: popUp 2s infinite 1s $easeOutSine;
+
+    @for $i from 1 through 8 {
+      &:nth-child(#{$i + 1}) {
+        $delay: $i * 0.1 + 1s;
+        animation-delay: $delay;
+      }
+    }
+  }
+}

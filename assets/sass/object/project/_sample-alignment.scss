@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@use "../../global" as *;
+
+/* //////////  Sample - Alignment  ////////// */
+.p-sampleAlignment {
+  &__item {
+    background-color: $black;
+    color: $black;
+    @include ar(1, 1);
+
+    @supports not (aspect-ratio: 1 / 1) {
+      &.-vertical > :first-child {
+        top: auto;
+        right: auto;
+        bottom: auto;
+        height: auto;
+      }
+    }
+  }
+
+  &__itemContainer {
+    flex-grow: 1;
+  }
+
+  &__itemInner {
+    flex-shrink: 0;
+    padding: remSize(8px) remSize(4px);
+    min-width: calc(60 / 180 * 100%);
+    min-height: calc(60 / 180 * 100%);
+    background-color: $white;
+
+    @include mq(xl) {
+      padding: remSize(16px) remSize(8px);
+    }
+  }
+
+  &__itemText {
+    margin-top: remSize(6px);
+    font-size: remSize(8px);
+
+    @include mq(md) {
+      margin-top: remSize(10px);
+      font-size: remSize(12px);
+    }
+  }
+}

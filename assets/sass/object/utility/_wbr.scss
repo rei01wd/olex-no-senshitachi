@@ -1,0 +1,19 @@
+@charset "UTF-8";
+@use "../../global" as *;
+
+/* //////////  wbr  ////////// */
+.u-wbr {
+  @each $device, $breakpoint in $breakpoints {
+    @include mq($device) {
+      &[data-strength~="#{$device}:soft"] {
+        display: inline-block;
+      }
+      &[data-strength~="#{$device}:hard"] {
+        display: block;
+      }
+      &[data-strength~="#{$device}:reset"] {
+        display: inline;
+      }
+    }
+  }
+}

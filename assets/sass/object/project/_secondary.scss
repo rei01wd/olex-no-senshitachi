@@ -1,0 +1,69 @@
+@charset "UTF-8";
+@use "../../global" as *;
+
+/* //////////  Secondary  ////////// */
+.p-secondary {
+  &__content {
+    font-size: remSize(14px);
+    font-size: clampSize(14px, 16px, min, xxl);
+
+    @include mq(md) {
+      font-size: remSize(16px);
+      font-size: clampSize(14px, 16px, min, xxl);
+    }
+
+    &.-overview {
+      position: relative;
+      z-index: 0;
+      color: $white;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: -64%;
+        z-index: -1;
+        width: auto;
+        background-color: $gray-400;
+
+        @include mq(xl) {
+          right: -64%;
+          bottom: 0;
+          left: -100%;
+        }
+      }
+    }
+
+    &.-grid {
+      @include mq(lg) {
+        position: sticky;
+        top: remSize(106px);
+        padding: remSize(80px) remSize(36px);
+        padding: clampSize(80px, 96px, lg, xxl) clampSize(36px, 64px, lg, xxl);
+      }
+    }
+  }
+
+  &__text {
+    line-height: lhSize(28, 14px);
+    letter-spacing: lsSize(40);
+
+    &.-overview {
+      margin-top: emSize(20px, 14px);
+
+      @include mq(md) {
+        margin-top: emSize(24px, 16px);
+      }
+    }
+
+    &.-grid {
+      margin-top: emSize(20px, 14px);
+
+      @include mq(lg) {
+        margin-top: emSize(24px, 16px);
+      }
+    }
+  }
+}

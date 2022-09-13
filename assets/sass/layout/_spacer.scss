@@ -1,0 +1,53 @@
+@charset "UTF-8";
+@use "../global" as *;
+
+/*
+  Spacer
+--------------------------------------------------------- */
+// Space Size
+$spaces: (
+  0,
+  12px,
+  18px,
+  24px,
+  40px,
+  48px,
+  56px,
+  60px,
+  64px,
+  76px,
+  80px,
+  88px,
+  92px,
+  108px,
+  112px,
+  120px,
+  124px,
+  128px,
+  136px,
+  140px,
+  148px,
+  163px,
+  240px,
+  255px
+) !default;
+
+.l-spacer {
+  @each $device, $breakpoint in $breakpoints {
+    @each $space in $spaces {
+      @include mq($device) {
+        &[data-space~="#{$device}:#{$space}"] {
+          padding: remSize($space) 0;
+        }
+
+        &[data-space~="#{$device}Top:#{$space}"] {
+          padding-top: remSize($space);
+        }
+
+        &[data-space~="#{$device}Bottom:#{$space}"] {
+          padding-bottom: remSize($space);
+        }
+      }
+    }
+  }
+}

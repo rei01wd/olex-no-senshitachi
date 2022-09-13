@@ -1,0 +1,18 @@
+@charset "UTF-8";
+@use "../setting" as *;
+@use "sass:map";
+
+//  Media Query
+//---------------------------------------------------------
+@mixin mq($device) {
+  @media screen and (min-width: map.get($breakpoints, $device)) {
+    @content;
+  }
+}
+
+// 呼び出し方メモ
+// @include mq(ブレイクポイント) {
+//  セレクター {
+//    プロパティ: 値;
+//    }
+//  }

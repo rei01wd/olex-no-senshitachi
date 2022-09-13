@@ -1,0 +1,67 @@
+@charset "UTF-8";
+@use "../../global" as *;
+
+/* //////////  Button  ////////// */
+.p-button {
+  z-index: 0;
+  overflow: hidden;
+  border-radius: remSize(50px);
+  border: 2px solid $gray-400;
+  transition: color 0.25s $easeOutSine;
+
+  &.-primary {
+    padding: remSize(16px) remSize(32px);
+    background-color: $gray-400;
+    color: $white;
+  }
+
+  &.-secondary {
+    padding: remSize(16px);
+    border-color: $white;
+    font-size: remSize(16px);
+
+    &.-lg {
+      @include mq(lg) {
+        padding: remSize(24px);
+        font-size: remSize(24px);
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    border-radius: 50%;
+    opacity: 0;
+    transform-origin: center;
+    transition: opacity 0.25s $easeOutSine, transform 0.25s $easeOutSine;
+  }
+
+  &::before {
+    background-color: $white;
+  }
+
+  &[href]:hover,
+  &[href]:focus {
+    color: $black;
+  }
+
+  &[href]:hover::before,
+  &[href]:focus::before {
+    opacity: 1;
+    transform: scale(20);
+  }
+
+  &.-small[href]:hover::before,
+  &.-small[href]:focus::before {
+    transform: scale(14);
+  }
+}

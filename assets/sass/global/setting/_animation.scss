@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+//  Animation
+//---------------------------------------------------------
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(10%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes open {
+  0% {
+    transform-origin: left;
+    transform: rotateY(15deg);
+  }
+
+  100% {
+    transform-origin: left;
+    transform: rotateY(0);
+  }
+}
+
+@keyframes popUp {
+  0% {
+    transform: translateY(0%);
+  }
+
+  20% {
+    transform: translateY(-20%);
+  }
+
+  35%,
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes hamburgerTop {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(5px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(5px) rotate(45deg);
+  }
+}
+
+@keyframes hamburgerBottom {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+}
+
+@keyframes hamburgerTopClose {
+  0% {
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  50% {
+    transform: translateY(5px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes hamburgerBottomClose {
+  0% {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}

@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olex - Ore no Flexible CSS Grid System</title>
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+    <script src="assets/js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div class="p-loading">
+      <h1 class="p-loading__title">
+        <span class="p-loading__character">O</span><span class="p-loading__character">l</span
+        ><span class="p-loading__character">e</span><span class="p-loading__character">x</span
+        ><span class="p-loading__character">.</span><span class="p-loading__character">c</span
+        ><span class="p-loading__character">s</span><span class="p-loading__character">s</span>
+      </h1>
+    </div>
+
+    <header class="l-header p-header">
+      <div class="l-spacer" data-space="minTop:48px">
+        <div class="l-container">
+          <div class="olex" data-align="min:justify min:middle">
+            <div class="olex__item">
+              <h1 class="p-header__title" lang="en">
+                <a href="index.html">Olex.css</a>
+              </h1>
+            </div>
+            <div class="olex__item" data-align="min:end lg:start">
+              <nav class="p-header__nav">
+                <h2 class="u-visuallyHidden">サイト内メニュー</h2>
+                <button
+                  class="js-buttonHamburger c-button p-buttonHamburger"
+                  type="button"
+                  aria-controls="js-drawer"
+                  aria-expanded="false"
+                >
+                  <span class="js-buttonHamburger__inner p-buttonHamburger__inner"
+                    ><span class="u-visuallyHidden">メニュを開閉する</span></span
+                  >
+                </button>
+                <div id="js-drawer" class="p-drawer" aria-hidden="true">
+                  <div class="l-spacer" data-space="minTop:148px minBottom:112px lg:0">
+                    <div class="l-container" data-disabled="lg">
+                      <ul class="js-globalNav p-globalNav" lang="en">
+                        <li class="p-globalNav__list"><a class="js-globalNavHref" href="#overview">Overview</a></li>
+                        <li class="p-globalNav__list"><a class="js-globalNavHref" href="#grid">Grid</a></li>
+                        <li class="p-globalNav__list"><a class="js-globalNavHref" href="#alignment">Alignment</a></li>
+                        <li class="p-globalNav__list"><a class="js-globalNavHref" href="#direction">Direction</a></li>
+                        <li class="p-globalNav__button">
+                          <a
+                            class="js-globalNavHref p-button -secondary -small c-button"
+                            href="https://shibajuku.net/olex/"
+                            target="_blank"
+                            >How to Make</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- /.l-spacer -->
+                </div>
+              </nav>
+            </div>
+          </div>
+          <!-- /.olex -->
+        </div>
+        <!-- /.l-container -->
+      </div>
+      <!-- /.l-spacer -->
+    </header>
+
+    <main class="l-main">
+      <div class="p-hero">
+        <div class="l-container">
+          <div class="olex">
+            <div class="olex__item" data-cols="min:12 lg:6" data-align="lg:middle">
+              <div class="p-hero__content">
+                <div class="l-spacer" data-space="minTop:124px lgTop:128px lgBottom:88px">
+                  <h1 class="js-heroAnimation p-hero__title" lang="en">
+                    <span class="u-visuallyHidden">Ore no Flexible CSS Grid System</span
+                    ><span class="u-wbr" data-strength="min:hard" aria-hidden="true"
+                      ><span class="p-hero__character">O</span><span class="p-hero__character">r</span
+                      ><span class="p-hero__character">e</span> <span class="p-hero__character">n</span
+                      ><span class="p-hero__character">o</span> </span
+                    ><span class="u-wbr" data-strength="min:hard" aria-hidden="true"
+                      ><span class="p-hero__character">F</span><span class="p-hero__character">l</span
+                      ><span class="p-hero__character">e</span><span class="p-hero__character">x</span
+                      ><span class="p-hero__character">i</span><span class="p-hero__character">b</span
+                      ><span class="p-hero__character">l</span><span class="p-hero__character">e</span>
+                      <span class="p-hero__character">C</span><span class="p-hero__character">S</span
+                      ><span class="p-hero__character">S</span> </span
+                    ><span class="u-wbr" data-strength="min:hard" aria-hidden="true"
+                      ><span class="p-hero__character">G</span><span class="p-hero__character">r</span
+                      ><span class="p-hero__character">i</span><span class="p-hero__character">d</span>
+                      <span class="p-hero__character">S</span><span class="p-hero__character">y</span
+                      ><span class="p-hero__character">s</span><span class="p-hero__character">t</span
+                      ><span class="p-hero__character">e</span><span class="p-hero__character">m</span
+                      ><span class="p-hero__character">.</span></span
+                    >
+                  </h1>
+                  <p class="p-hero__text">
+                    <span class="u-visuallyHidden"
+                      >俺流のフレキシブルCSSグリッドシステム「Olex」のデモページ。
+                      「Olex」はFlexboxを利用した単なるグリッドシステムなので、
+                      気になった方は、解説ページを参考に自分で作ってもらえたらと思います。</span
+                    ><span aria-hidden="true"
+                      ><span class="u-wbr" data-strength="min:soft">俺流のフレキシブルCSSグリッドシステム</span
+                      ><span class="u-wbr" data-strength="min:soft">「Olex」のデモページ。</span><br />
+                      <span class="u-wbr" data-strength="min:soft">「Olex」はFlexboxを利用した</span
+                      ><span class="u-wbr" data-strength="min:soft">単なるグリッドシステムなので、</span><br />
+                      <span class="u-wbr" data-strength="min:soft">気になった方は、解説ページを参考に</span
+                      ><span class="u-wbr" data-strength="min:soft">自分で作ってもらえたらと思います。</span></span
+                    >
+                  </p>
+                  <p class="p-hero__button" lang="en">
+                    <a class="p-button -primary c-button" href="https://shibajuku.net/olex/" target="_blank"
+                      >How to Make</a
+                    >
+                  </p>
+                </div>
+                <!-- /.l-spacer -->
+              </div>
+            </div>
+            <div class="olex__item" data-cols="min:12 lg:6" data-over="min:left min:right lg:clearLeft">
+              <div class="p-hero__visual">
+                <div class="l-container" data-hidden="lg">
+                  <div class="js-heroAnimation p-hero__imageContainer">
+                    <div class="olex p-hero__imageInner">
+                      <div class="olex__item p-hero__imagePiece" data-cols="min:4">
+                        <picture>
+                          <source
+                            srcset="assets/images/top/hero-1-sm.jpg, assets/images/top/hero-1-sm@2x.jpg 2x"
+                            media="(max-width: 575px)"
+                          />
+                          <img
+                            class="p-hero__image u-grayscale"
+                            src="assets/images/top/hero-1-lg.jpg"
+                            srcset="assets/images/top/hero-1-lg.jpg, assets/images/top/hero-1-lg@2x.jpg 2x"
+                            alt=""
+                            width="364"
+                            height="1096"
+                            decoding="async"
+                          />
+                        </picture>
+                      </div>
+
+                      <div class="olex__item p-hero__imagePiece" data-cols="min:4">
+                        <picture>
+                          <source
+                            srcset="assets/images/top/hero-2-sm.jpg, assets/images/top/hero-2-sm@2x.jpg 2x"
+                            media="(max-width: 575px)"
+                          />
+                          <img
+                            class="p-hero__image u-grayscale"
+                            src="assets/images/top/hero-2-lg.jpg"
+                            srcset="assets/images/top/hero-2-lg.jpg, assets/images/top/hero-2-lg@2x.jpg 2x"
+                            alt=""
+                            width="364"
+                            height="1096"
+                            decoding="async"
+                          />
+                        </picture>
+                      </div>
+
+                      <div class="olex__item p-hero__imagePiece" data-cols="min:4">
+                        <picture>
+                          <source
+                            srcset="assets/images/top/hero-3-sm.jpg, assets/images/top/hero-3-sm@2x.jpg 2x"
+                            media="(max-width: 575px)"
+                          />
+                          <img
+                            class="p-hero__image u-grayscale"
+                            src="assets/images/top/hero-3-lg.jpg"
+                            srcset="assets/images/top/hero-3-lg.jpg, assets/images/top/hero-3-lg@2x.jpg 2x"
+                            alt=""
+                            width="364"
+                            height="1096"
+                            decoding="async"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.l-container -->
+              </div>
+            </div>
+          </div>
+          <!-- /.olex -->
+        </div>
+        <!-- /.l-container -->
+      </div>
+      <!-- /.p-hero -->
+
+      <section class="p-main -gray-100">
+        <div class="l-spacer" data-space="min:64px md:76px xl:120px">
+          <div class="p-main__content -center">
+            <div class="l-container">
+              <h2
+                id="overview"
+                class="js-scrollAnimation p-scrollAnimation p-heading -primary"
+                data-effect="zoomIn"
+                lang="en"
+              >
+                <span class="u-visuallyHidden">Overview</span
+                ><span aria-hidden="true"
+                  ><span class="p-scrollAnimation__element">O</span><span class="p-scrollAnimation__element">v</span
+                  ><span class="p-scrollAnimation__element">e</span><span class="p-scrollAnimation__element">r</span
+                  ><span class="p-scrollAnimation__element">v</span><span class="p-scrollAnimation__element">i</span
+                  ><span class="p-scrollAnimation__element">e</span
+                  ><span class="p-scrollAnimation__element">w</span></span
+                >
+              </h2>
+              <p class="p-main__text">
+                <span class="u-visuallyHidden"
+                  >12カラムを基準として必要なカラム数を指定するグリッドシステム。
+                  間隔を開けるも閉じるも、その大きさも選択できる。
+                  位置揃えや順番の入れ替えも可能。後は自分でカスタマイズして下さい。</span
+                ><span aria-hidden="true"
+                  ><span class="u-wbr" data-strength="min:soft">12カラムを基準として</span
+                  ><span class="u-wbr" data-strength="min:soft">必要なカラム数を指定するグリッドシステム。</span><br />
+                  <span class="u-wbr" data-strength="min:soft">間隔を開けるも閉じるも、その大きさも選択できる。</span
+                  ><br />
+                  <span class="u-wbr" data-strength="min:soft">位置揃えや順番の入れ替えも可能。</span
+                  ><span class="u-wbr" data-strength="min:soft">後は自分でカスタマイズして下さい。</span></span
+                >
+              </p>
+            </div>
+            <!-- /.l-container -->
+          </div>
+
+          <section class="p-secondary">
+            <div class="l-spacer" data-space="minTop:64px mdTop:76px xlTop:120px">
+              <div class="l-container">
+                <div class="olex" data-align="xl:middle" data-gutter="min:small">
+                  <div
+                    class="olex__item"
+                    data-cols="min:12 xl:3"
+                    data-over="min:left min:right xl:clearLeft xl:clearRight"
+                  >
+                    <div class="p-secondary__content -overview">
+                      <div class="l-spacer" data-space="minTop:64px mdTop:76px xlTop:120px xlBottom:92px">
+                        <div class="l-container" data-disabled="xl">
+                          <h3 class="p-heading -secondary -wide" lang="en">Feature</h3>
+                          <p class="p-secondary__text -overview">
+                            Flexboxを利用したグリッドシステムで、単なる横並びや12カラムをベースとしたグリッドレイアウトも可能です。グリッド間のスペースにはborderを利用していて間隔の調整が容易にできます。もちろんこのページのレイアウトは「Olex.css」を使っているので、詳しくはデベロッパーツールで。
+                          </p>
+                        </div>
+                        <!-- /.l-container -->
+                      </div>
+                      <!-- /.l-spacer -->
+                    </div>
+                  </div>
+
+                  <div class="olex__item" data-cols="min:12 xl:9">
+                    <div class="p-featureList c-card">
+                      <ul class="olex" data-gutter="min:small">
+                        <li class="olex__item" data-cols="min:12 md:4">
+                          <a class="p-featureList__item c-card__href" href="#grid">
+                            <div class="p-featureList__itemBorder c-card__content">
+                              <h4 class="p-featureList__title" lang="en">Grid</h4>
+                              <p class="p-featureList__text">
+                                <span class="u-wbr" data-strength="min:hard xs:soft md:hard">12カラムを基準とした</span
+                                ><span class="u-wbr" data-strength="min:hard xs:soft md:hard">グリッドシステム。</span>
+                              </p>
+                            </div>
+                            <div class="c-card__thumbnail">
+                              <img
+                                src="assets/images/icon/icon-grid.png"
+                                srcset="assets/images/icon/icon-grid.png, assets/images/icon/icon-grid@2x.png 2x"
+                                alt=""
+                                decoding="async"
+                              />
+                            </div>
+                          </a>
+                        </li>
+
+                        <li class="olex__item" data-cols="min:12 md:4">
+                          <a class="p-featureList__item c-card__href" href="#alignment">
+                            <div class="p-featureList__itemBorder c-card__content">
+                              <h4 class="p-featureList__title" lang="en">Alignment</h4>
+                              <p class="p-featureList__text">
+                                <span class="u-wbr" data-strength="min:hard xs:soft md:hard"
+                                  >各アイテムの位置を揃える</span
+                                ><span class="u-wbr" data-strength="min:hard xs:soft md:hard">こともできる。</span>
+                              </p>
+                            </div>
+                            <div class="c-card__thumbnail">
+                              <img
+                                src="assets/images/icon/icon-alignment.png"
+                                srcset="
+                                  assets/images/icon/icon-alignment.png,
+                                  assets/images/icon/icon-alignment@2x.png 2x
+                                "
+                                alt=""
+                                decoding="async"
+                              />
+                            </div>
+                          </a>
+                        </li>
+
+                        <li class="olex__item" data-cols="min:12 md:4">
+                          <a class="p-featureList__item c-card__href" href="#direction">
+                            <div class="p-featureList__itemBorder c-card__content">
+                              <h4 class="p-featureList__title" lang="en">Direction</h4>
+                              <p class="p-featureList__text">
+                                <span class="u-wbr" data-strength="min:hard xs:soft md:hard">アイテムの並び順を</span
+                                ><span class="u-wbr" data-strength="min:hard xs:soft md:hard">逆順に変更できる。</span>
+                              </p>
+                            </div>
+                            <div class="c-card__thumbnail">
+                              <img
+                                src="assets/images/icon/icon-direction.png"
+                                srcset="
+                                  assets/images/icon/icon-direction.png,
+                                  assets/images/icon/icon-direction@2x.png 2x
+                                "
+                                alt=""
+                                decoding="async"
+                              />
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.olex -->
+              </div>
+              <!-- /.l-container -->
+            </div>
+            <!-- /.l-spacer -->
+          </section>
+        </div>
+        <!-- /.l-spacer -->
+      </section>
+
+      <section class="p-main">
+        <div class="l-spacer" data-space="min:64px md:76px xl:120px">
+          <div class="l-container">
+            <div class="p-main__content -center">
+              <h2
+                id="grid"
+                class="js-scrollAnimation p-scrollAnimation p-heading -primary"
+                data-effect="zoomIn"
+                lang="en"
+              >
+                <span class="u-visuallyHidden">Grid</span
+                ><span aria-hidden="true"
+                  ><span class="p-scrollAnimation__element">G</span><span class="p-scrollAnimation__element">r</span
+                  ><span class="p-scrollAnimation__element">i</span
+                  ><span class="p-scrollAnimation__element">d</span></span
+                >
+              </h2>
+              <p class="p-main__text">
+                <span class="u-visuallyHidden"
+                  >スマホは2列PCは4列なども属性値の付け替えでOK。 間隔を開けるも閉じるも、属性で調整。
+                  間隔の大きさも拡張可能。</span
+                ><span aria-hidden="true">
+                  <span class="u-wbr" data-strength="min:soft">スマホは2列PCは4列なども</span
+                  ><span class="u-wbr" data-strength="min:soft">属性値の付け替えでOK。</span><br />
+                  <span class="u-wbr" data-strength="min:soft">間隔を開けるも閉じるも、属性で調整。</span><br />
+                  <span class="u-wbr" data-strength="min:soft">間隔の大きさも拡張可能。</span></span
+                >
+              </p>
+            </div>
+
+            <section class="p-secondary">
+              <div class="l-spacer" data-space="minTop:24px mdTop:76px xlTop:120px">
+                <div class="olex" data-gutter="min:small" data-dir="min:reverse">
+                  <div class="olex__item" data-cols="min:12 lg:4">
+                    <div class="p-secondary__content -grid">
+                      <h3 class="p-heading -secondary" lang="en">Flexible</h3>
+                      <p class="p-secondary__text -grid">
+                        スマホ、タブレット、PCで異なるカラムのレイアウトも容易に対応できます。
+                        12カラムをベースとして、必要なカラム数をカスタムデータ属性で指定するだけでレイアウトが可能。
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="olex__item p-sampleGrid" data-cols="min:12 lg:8" aria-hidden="true">
+                    <div class="olex p-scrollAnimation" data-effect="slideUp">
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/flexible/img-1-sm.jpg, assets/images/flexible/img-1-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/flexible/img-1-lg.jpg"
+                              srcset="assets/images/flexible/img-1-lg.jpg, assets/images/flexible/img-1-lg@2x.jpg 2x"
+                              alt=""
+                              width="792"
+                              height="792"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 6/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/flexible/img-2-sm.jpg, assets/images/flexible/img-2-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/flexible/img-2-lg.jpg"
+                              srcset="assets/images/flexible/img-2-lg.jpg, assets/images/flexible/img-2-lg@2x.jpg 2x"
+                              alt=""
+                              width="792"
+                              height="792"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 6/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6 lg:3">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/flexible/img-3-sm.jpg, assets/images/flexible/img-3-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/flexible/img-3-lg.jpg"
+                              srcset="assets/images/flexible/img-3-lg.jpg, assets/images/flexible/img-3-lg@2x.jpg 2x"
+                              alt=""
+                              width="396"
+                              height="396"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 3/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6 lg:3">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/flexible/img-4-sm.jpg, assets/images/flexible/img-4-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/flexible/img-4-lg.jpg"
+                              srcset="assets/images/flexible/img-4-lg.jpg, assets/images/flexible/img-4-lg@2x.jpg 2x"
+                              alt=""
+                              width="396"
+                              height="396"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 3/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6 lg:3">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/flexible/img-5-sm.jpg, assets/images/flexible/img-5-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/flexible/img-5-lg.jpg"
+                              srcset="assets/images/flexible/img-5-lg.jpg, assets/images/flexible/img-5-lg@2x.jpg 2x"
+                              alt=""
+                              width="396"
+                              height="396"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 3/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6 lg:3">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/flexible/img-6-sm.jpg, assets/images/flexible/img-6-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/flexible/img-6-lg.jpg"
+                              srcset="assets/images/flexible/img-6-lg.jpg, assets/images/flexible/img-6-lg@2x.jpg 2x"
+                              alt=""
+                              width="396"
+                              height="396"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 3/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:12 lg:8">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/flexible/img-7-sm.jpg, assets/images/flexible/img-7-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/flexible/img-7-lg.jpg"
+                              srcset="assets/images/flexible/img-7-lg.jpg, assets/images/flexible/img-7-lg@2x.jpg 2x"
+                              alt=""
+                              width="1056"
+                              height="528"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 12/12 - TAB&#65306; 8/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6 lg:4">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/flexible/img-8-sm.jpg, assets/images/flexible/img-8-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/flexible/img-8-lg.jpg"
+                              srcset="assets/images/flexible/img-8-lg.jpg, assets/images/flexible/img-8-lg@2x.jpg 2x"
+                              alt=""
+                              width="528"
+                              height="528"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 4/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6 lg:4">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/flexible/img-9-sm.jpg, assets/images/flexible/img-9-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/flexible/img-9-lg.jpg"
+                              srcset="assets/images/flexible/img-9-lg.jpg, assets/images/flexible/img-9-lg@2x.jpg 2x"
+                              alt=""
+                              width="528"
+                              height="528"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 4/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:12 lg:8">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/flexible/img-10-sm.jpg, assets/images/flexible/img-10-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/flexible/img-10-lg.jpg"
+                              srcset="assets/images/flexible/img-10-lg.jpg, assets/images/flexible/img-10-lg@2x.jpg 2x"
+                              alt=""
+                              width="1056"
+                              height="528"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 12/12 - TAB&#65306; 8/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:4">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/flexible/img-11-sm.jpg, assets/images/flexible/img-11-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/flexible/img-11-lg.jpg"
+                              srcset="assets/images/flexible/img-11-lg.jpg, assets/images/flexible/img-11-lg@2x.jpg 2x"
+                              alt=""
+                              width="528"
+                              height="528"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 4/12 - TAB&#65306; 4/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:4">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/flexible/img-12-sm.jpg, assets/images/flexible/img-12-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/flexible/img-12-lg.jpg"
+                              srcset="assets/images/flexible/img-12-lg.jpg, assets/images/flexible/img-12-lg@2x.jpg 2x"
+                              alt=""
+                              width="528"
+                              height="528"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 4/12 - TAB&#65306; 4/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:4">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/flexible/img-13-sm.jpg, assets/images/flexible/img-13-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/flexible/img-13-lg.jpg"
+                              srcset="assets/images/flexible/img-13-lg.jpg, assets/images/flexible/img-13-lg@2x.jpg 2x"
+                              alt=""
+                              width="528"
+                              height="528"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 4/12 - TAB&#65306; 4/12</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.olex -->
+                  </div>
+                </div>
+                <!-- /.olex -->
+              </div>
+              <!-- /.l-spacer -->
+            </section>
+
+            <section class="p-secondary">
+              <div class="l-spacer" data-space="minTop:64px mdTop:76px xlTop:120px">
+                <div class="olex" data-gutter="min:small">
+                  <div class="olex__item" data-cols="min:12 lg:4">
+                    <div class="p-secondary__content -grid">
+                      <h3 class="p-heading -secondary" lang="en">Gutter</h3>
+                      <p class="p-secondary__text -grid">
+                        各アイテム間のスペースもカスタムデータ属性を指定するだけで、スペースの有無はもちろん、その大きさも選択できます。また、このスペースには
+                        border プロパティを使っているので、スペースのサイズを拡張するのも容易です。
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="olex__item p-sampleGrid" data-cols="min:12 lg:8" aria-hidden="true">
+                    <div class="olex p-scrollAnimation" data-effect="slideUp" data-gutter="min:xxsmall sm:small">
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/gutter/img-1-sm.jpg, assets/images/gutter/img-1-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/gutter/img-1-lg.jpg"
+                              srcset="assets/images/gutter/img-1-lg.jpg, assets/images/gutter/img-1-lg@2x.jpg 2x"
+                              alt=""
+                              width="768"
+                              height="768"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 6/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/gutter/img-2-sm.jpg, assets/images/gutter/img-2-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/gutter/img-2-lg.jpg"
+                              srcset="assets/images/gutter/img-2-lg.jpg, assets/images/gutter/img-2-lg@2x.jpg 2x"
+                              alt=""
+                              width="768"
+                              height="768"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 6/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6 lg:3">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/gutter/img-3-sm.jpg, assets/images/gutter/img-3-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/gutter/img-3-lg.jpg"
+                              srcset="assets/images/gutter/img-3-lg.jpg, assets/images/gutter/img-3-lg@2x.jpg 2x"
+                              alt=""
+                              width="360"
+                              height="360"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 3/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6 lg:3">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/gutter/img-4-sm.jpg, assets/images/gutter/img-4-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/gutter/img-4-lg.jpg"
+                              srcset="assets/images/gutter/img-4-lg.jpg, assets/images/gutter/img-4-lg@2x.jpg 2x"
+                              alt=""
+                              width="360"
+                              height="360"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 3/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6 lg:3">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/gutter/img-5-sm.jpg, assets/images/gutter/img-5-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/gutter/img-5-lg.jpg"
+                              srcset="assets/images/gutter/img-5-lg.jpg, assets/images/gutter/img-5-lg@2x.jpg 2x"
+                              alt=""
+                              width="360"
+                              height="360"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 3/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6 lg:3">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/gutter/img-6-sm.jpg, assets/images/gutter/img-6-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/gutter/img-6-lg.jpg"
+                              srcset="assets/images/gutter/img-6-lg.jpg, assets/images/gutter/img-6-lg@2x.jpg 2x"
+                              alt=""
+                              width="360"
+                              height="360"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 3/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:12 lg:8">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/gutter/img-7-sm.jpg, assets/images/gutter/img-7-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/gutter/img-7-lg.jpg"
+                              srcset="assets/images/gutter/img-7-lg.jpg, assets/images/gutter/img-7-lg@2x.jpg 2x"
+                              alt=""
+                              width="1040"
+                              height="496"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 12/12 - TAB&#65306; 8/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6 lg:4">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/gutter/img-8-sm.jpg, assets/images/gutter/img-8-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/gutter/img-8-lg.jpg"
+                              srcset="assets/images/gutter/img-8-lg.jpg, assets/images/gutter/img-8-lg@2x.jpg 2x"
+                              alt=""
+                              width="496"
+                              height="496"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 4/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:6 lg:4">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/gutter/img-9-sm.jpg, assets/images/gutter/img-9-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/gutter/img-9-lg.jpg"
+                              srcset="assets/images/gutter/img-9-lg.jpg, assets/images/gutter/img-9-lg@2x.jpg 2x"
+                              alt=""
+                              width="496"
+                              height="496"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 6/12 - TAB&#65306; 4/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:12 lg:8">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/gutter/img-10-sm.jpg, assets/images/gutter/img-10-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/gutter/img-10-lg.jpg"
+                              srcset="assets/images/gutter/img-10-lg.jpg, assets/images/gutter/img-10-lg@2x.jpg 2x"
+                              alt=""
+                              width="1040"
+                              height="496"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 12/12 - TAB&#65306; 8/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:4">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/gutter/img-11-sm.jpg, assets/images/gutter/img-11-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/gutter/img-11-lg.jpg"
+                              srcset="assets/images/gutter/img-11-lg.jpg, assets/images/gutter/img-11-lg@2x.jpg 2x"
+                              alt=""
+                              width="496"
+                              height="496"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 4/12 - TAB&#65306; 4/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:4">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/gutter/img-12-sm.jpg, assets/images/gutter/img-12-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/gutter/img-12-lg.jpg"
+                              srcset="assets/images/gutter/img-12-lg.jpg, assets/images/gutter/img-12-lg@2x.jpg 2x"
+                              alt=""
+                              width="496"
+                              height="496"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 4/12 - TAB&#65306; 4/12</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="js-scrollAnimation olex__item p-scrollAnimation__element" data-cols="min:4">
+                        <div class="p-sampleGrid__item p-coloring">
+                          <picture>
+                            <source
+                              srcset="assets/images/gutter/img-13-sm.jpg, assets/images/gutter/img-13-sm@2x.jpg 2x"
+                              media="(max-width: 575px)"
+                            />
+                            <img
+                              class="u-grayscale p-coloring__image"
+                              src="assets/images/gutter/img-13-lg.jpg"
+                              srcset="assets/images/gutter/img-13-lg.jpg, assets/images/gutter/img-13-lg@2x.jpg 2x"
+                              alt=""
+                              width="496"
+                              height="496"
+                              decoding="async"
+                            />
+                          </picture>
+                          <div class="p-sampleGrid__desc">
+                            <p>SP&#65306; 4/12 - TAB&#65306; 4/12</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.olex -->
+                  </div>
+                </div>
+                <!-- /.olex -->
+              </div>
+              <!-- /.l-spacer -->
+            </section>
+          </div>
+          <!-- /.l-container -->
+        </div>
+        <!-- /.l-spacer -->
+      </section>
+
+      <section class="p-main -gray-400">
+        <div
+          class="l-spacer"
+          data-space="minTop:64px minBottom:128px mdTop:76px mdBottom:148px xlTop:120px xlBottom:240px"
+        >
+          <div class="l-container">
+            <div class="p-main__content -center">
+              <h2
+                id="alignment"
+                class="js-scrollAnimation p-scrollAnimation p-heading -primary"
+                data-effect="zoomIn"
+                lang="en"
+              >
+                <span class="u-visuallyHidden">Alignment</span
+                ><span aria-hidden="true"
+                  ><span class="p-scrollAnimation__element">A</span><span class="p-scrollAnimation__element">l</span
+                  ><span class="p-scrollAnimation__element">i</span><span class="p-scrollAnimation__element">g</span
+                  ><span class="p-scrollAnimation__element">n</span><span class="p-scrollAnimation__element">m</span
+                  ><span class="p-scrollAnimation__element">e</span><span class="p-scrollAnimation__element">n</span
+                  ><span class="p-scrollAnimation__element">t</span></span
+                >
+              </h2>
+              <p class="p-main__text">
+                <span class="u-visuallyHidden"
+                  >水平方向の位置揃えや垂直方向の位置揃えもできます。
+                  左のカラムに大きな写真、右のカラムにはテキストを天地中央に配置なんてことも可能です。 </span
+                ><span aria-hidden="true">
+                  <span class="u-wbr" data-strength="min:soft">水平方向の位置揃えや</span
+                  ><span class="u-wbr" data-strength="min:soft">垂直方向の位置揃えもできます。</span><br />
+                  <span class="u-wbr" data-strength="min:soft">左のカラムに大きな写真、右のカラムにはテキストを</span
+                  ><span class="u-wbr" data-strength="min:hard">天地中央に配置なんてことも可能です。</span></span
+                >
+              </p>
+            </div>
+
+            <div class="p-sampleAlignment">
+              <div class="l-spacer" data-space="minTop:24px mdTop:76px xlTop:120px">
+                <ul class="olex" data-gutter="min:xxsmall sm:small">
+                  <li class="olex__item p-sampleAlignment__item" data-cols="min:4 lg:2" lang="en">
+                    <div class="olex p-sampleAlignment__itemContainer" data-align="min:start">
+                      <div class="olex__item p-sampleAlignment__itemInner" data-align="min:center min:middle">
+                        <picture>
+                          <source
+                            srcset="assets/images/icon/icon-left-sm.png, assets/images/icon/icon-left-sm@2x.png 2x"
+                            media="(max-width: 767px)"
+                          />
+                          <img
+                            src="assets/images/icon/icon-left-lg.png"
+                            srcset="assets/images/icon/icon-left-lg.png, assets/images/icon/icon-left-lg@2x.png 2x"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                        <p class="p-sampleAlignment__itemText">Left</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="olex__item p-sampleAlignment__item" data-cols="min:4 lg:2" lang="en">
+                    <div class="olex p-sampleAlignment__itemContainer" data-align="min:center">
+                      <div class="olex__item p-sampleAlignment__itemInner" data-align="min:center min:middle">
+                        <picture>
+                          <source
+                            srcset="assets/images/icon/icon-center-sm.png, assets/images/icon/icon-center-sm@2x.png 2x"
+                            media="(max-width: 767px)"
+                          />
+                          <img
+                            src="assets/images/icon/icon-center-lg.png"
+                            srcset="assets/images/icon/icon-center-lg.png, assets/images/icon/icon-center-lg@2x.png 2x"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                        <p class="p-sampleAlignment__itemText">Center</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="olex__item p-sampleAlignment__item" data-cols="min:4 lg:2" lang="en">
+                    <div class="olex p-sampleAlignment__itemContainer" data-align="min:end">
+                      <div class="olex__item p-sampleAlignment__itemInner" data-align="min:center min:middle">
+                        <picture>
+                          <source
+                            srcset="assets/images/icon/icon-right-sm.png, assets/images/icon/icon-right-sm@2x.png 2x"
+                            media="(max-width: 767px)"
+                          />
+                          <img
+                            src="assets/images/icon/icon-right-lg.png"
+                            srcset="assets/images/icon/icon-right-lg.png, assets/images/icon/icon-right-lg@2x.png 2x"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                        <p class="p-sampleAlignment__itemText">Right</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li
+                    class="olex__item p-sampleAlignment__item -vertical"
+                    data-cols="min:4 lg:2"
+                    data-align="min:top"
+                    lang="en"
+                  >
+                    <div class="olex">
+                      <div
+                        class="olex__item p-sampleAlignment__itemInner"
+                        data-cols="min:12"
+                        data-align="min:center min:middle"
+                      >
+                        <picture>
+                          <source
+                            srcset="assets/images/icon/icon-top-sm.png, assets/images/icon/icon-top-sm@2x.png 2x"
+                            media="(max-width: 767px)"
+                          />
+                          <img
+                            src="assets/images/icon/icon-top-lg.png"
+                            srcset="assets/images/icon/icon-top-lg.png, assets/images/icon/icon-top-lg@2x.png 2x"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                        <p class="p-sampleAlignment__itemText">Top</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li
+                    class="olex__item p-sampleAlignment__item -vertical"
+                    data-cols="min:4 lg:2"
+                    data-align="min:middle"
+                    lang="en"
+                  >
+                    <div class="olex">
+                      <div
+                        class="olex__item p-sampleAlignment__itemInner"
+                        data-cols="min:12"
+                        data-align="min:center min:middle"
+                      >
+                        <picture>
+                          <source
+                            srcset="assets/images/icon/icon-middle-sm.png, assets/images/icon/icon-middle-sm@2x.png 2x"
+                            media="(max-width: 767px)"
+                          />
+                          <img
+                            src="assets/images/icon/icon-middle-lg.png"
+                            srcset="assets/images/icon/icon-middle-lg.png, assets/images/icon/icon-middle-lg@2x.png 2x"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                        <p class="p-sampleAlignment__itemText">Middle</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li
+                    class="olex__item p-sampleAlignment__item -vertical"
+                    data-cols="min:4 lg:2"
+                    data-align="min:bottom"
+                    lang="en"
+                  >
+                    <div class="olex">
+                      <div
+                        class="olex__item p-sampleAlignment__itemInner"
+                        data-cols="min:12"
+                        data-align="min:center min:middle"
+                      >
+                        <picture>
+                          <source
+                            srcset="assets/images/icon/icon-bottom-sm.png, assets/images/icon/icon-bottom-sm@2x.png 2x"
+                            media="(max-width: 767px)"
+                          />
+                          <img
+                            src="assets/images/icon/icon-bottom-lg.png"
+                            srcset="assets/images/icon/icon-bottom-lg.png, assets/images/icon/icon-bottom-lg@2x.png 2x"
+                            alt=""
+                            decoding="async"
+                          />
+                        </picture>
+                        <p class="p-sampleAlignment__itemText">Bottom</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.l-spacer -->
+            </div>
+          </div>
+          <!-- /.l-container -->
+        </div>
+        <!-- /.l-spacer -->
+      </section>
+
+      <section class="p-main -direction">
+        <div
+          class="l-spacer"
+          data-space="minTop:64px minBottom:136px mdTop:76px mdBottom:163px xlTop:120px xlBottom:255px"
+        >
+          <div class="l-container">
+            <div class="p-main__content -center">
+              <h2
+                id="direction"
+                class="js-scrollAnimation p-scrollAnimation p-heading -primary"
+                data-effect="zoomIn"
+                lang="en"
+              >
+                <span class="u-visuallyHidden">Direction</span
+                ><span aria-hidden="true"
+                  ><span class="p-scrollAnimation__element">D</span><span class="p-scrollAnimation__element">i</span
+                  ><span class="p-scrollAnimation__element">r</span><span class="p-scrollAnimation__element">e</span
+                  ><span class="p-scrollAnimation__element">c</span><span class="p-scrollAnimation__element">t</span
+                  ><span class="p-scrollAnimation__element">i</span><span class="p-scrollAnimation__element">o</span
+                  ><span class="p-scrollAnimation__element">n</span></span
+                >
+              </h2>
+              <p class="p-main__text">
+                <span class="u-visuallyHidden"
+                  >カラムの並び順も変更可能。カスタマイズ次第では、個別に順番を入れ替えることだってできる。</span
+                ><span aria-hidden="true">
+                  <span class="u-wbr" data-strength="min:soft">カラムの並び順も変更可能。</span><br />
+                  <span class="u-wbr" data-strength="min:soft">カスタマイズ次第では、</span
+                  ><span class="u-wbr" data-strength="min:soft">個別に順番を入れ替えることだってできる。</span></span
+                >
+              </p>
+            </div>
+
+            <div class="l-spacer" data-space="minTop:40px mdTop:60px lgTop:80px">
+              <div class="olex" data-gutter="min:xsmall sm:small xl:medium">
+                <div class="olex__item" data-cols="min:12 md:6">
+                  <section class="p-secondary">
+                    <h3 class="p-heading -secondary -normal" lang="en">Normal</h3>
+                    <div class="p-sampleDirection" aria-hidden="true">
+                      <div class="l-spacer" data-space="minTop:12px mdTop:18px xlTop:24px">
+                        <ol class="olex" data-gutter="min:xxsmall sm:small xl:medium" lang="en">
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">1</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">2</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">3</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">4</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">5</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">6</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">7</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">8</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">9</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">10</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">11</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">12</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">13</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">14</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">15</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">16</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">17</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">18</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">19</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">20</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">21</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">22</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">23</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">24</span>
+                          </li>
+                        </ol>
+                      </div>
+                      <!-- /.l-spacer -->
+                    </div>
+                  </section>
+                </div>
+
+                <div class="olex__item" data-cols="min:12 md:6">
+                  <section class="p-secondary">
+                    <h3 class="p-heading -secondary -reverse" lang="en">Reverse</h3>
+                    <div class="p-sampleDirection -reverse" aria-hidden="true">
+                      <div class="l-spacer" data-space="minTop:12px mdTop:18px xlTop:24px">
+                        <ol class="olex" data-gutter="min:xxsmall sm:small xl:medium" data-dir="min:reverse" lang="en">
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">1</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">2</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">3</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">4</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">5</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">6</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">7</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">8</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">9</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">10</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">11</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">12</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">13</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">14</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">15</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">16</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">17</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">18</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">19</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">20</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">21</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">22</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">23</span>
+                          </li>
+                          <li
+                            class="olex__item p-sampleDirection__item"
+                            data-cols="min:2"
+                            data-align="min:center min:middle"
+                          >
+                            <span class="p-sampleDirection__itemText">24</span>
+                          </li>
+                        </ol>
+                      </div>
+                      <!-- /.l-spacer -->
+                    </div>
+                  </section>
+                </div>
+              </div>
+              <!-- /.olex -->
+            </div>
+            <!-- /.l-spacer -->
+          </div>
+          <!-- /.l-container -->
+        </div>
+        <!-- /.l-spacer -->
+      </section>
+    </main>
+
+    <footer class="l-footer p-footer">
+      <div class="l-spacer" data-space="minBottom:64px lgBottom:56px">
+        <div class="l-container">
+          <div class="p-footer__visual">
+            <div class="olex" data-gutter="min:xsmall sm:medium">
+              <div class="olex__item" data-cols="min:five">
+                <div class="p-footer__visualImageContainer p-coloring">
+                  <picture>
+                    <source
+                      srcset="assets/images/footer/img-1-sm.jpg, assets/images/footer/img-1-sm@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="p-footer__visualImage u-grayscale p-coloring__image"
+                      src="assets/images/footer/img-1-lg.jpg"
+                      srcset="assets/images/footer/img-1-lg.jpg, assets/images/footer/img-1-lg@2x.jpg 2x"
+                      alt=""
+                      width="432"
+                      height="1468"
+                      decoding="async"
+                    />
+                  </picture>
+                </div>
+              </div>
+              <div class="olex__item" data-cols="min:five">
+                <div class="p-footer__visualImageContainer p-coloring">
+                  <picture>
+                    <source
+                      srcset="assets/images/footer/img-2-sm.jpg, assets/images/footer/img-2-sm@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="p-footer__visualImage u-grayscale p-coloring__image"
+                      src="assets/images/footer/img-2-lg.jpg"
+                      srcset="assets/images/footer/img-2-lg.jpg, assets/images/footer/img-2-lg@2x.jpg 2x"
+                      alt=""
+                      width="432"
+                      height="1468"
+                      decoding="async"
+                    />
+                  </picture>
+                </div>
+              </div>
+              <div class="olex__item" data-cols="min:five">
+                <div class="p-footer__visualImageContainer p-coloring">
+                  <picture>
+                    <source
+                      srcset="assets/images/footer/img-3-sm.jpg, assets/images/footer/img-3-sm@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="p-footer__visualImage u-grayscale p-coloring__image"
+                      src="assets/images/footer/img-3-lg.jpg"
+                      srcset="assets/images/footer/img-3-lg.jpg, assets/images/footer/img-3-lg@2x.jpg 2x"
+                      alt=""
+                      width="432"
+                      height="1468"
+                      decoding="async"
+                    />
+                  </picture>
+                </div>
+              </div>
+              <div class="olex__item" data-cols="min:five">
+                <div class="p-footer__visualImageContainer p-coloring">
+                  <picture>
+                    <source
+                      srcset="assets/images/footer/img-4-sm.jpg, assets/images/footer/img-4-sm@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="p-footer__visualImage u-grayscale p-coloring__image"
+                      src="assets/images/footer/img-4-lg.jpg"
+                      srcset="assets/images/footer/img-4-lg.jpg, assets/images/footer/img-4-lg@2x.jpg 2x"
+                      alt=""
+                      width="432"
+                      height="1468"
+                      decoding="async"
+                    />
+                  </picture>
+                </div>
+              </div>
+              <div class="olex__item" data-cols="min:five">
+                <div class="p-footer__visualImageContainer p-coloring">
+                  <picture>
+                    <source
+                      srcset="assets/images/footer/img-5-sm.jpg, assets/images/footer/img-5-sm@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="p-footer__visualImage u-grayscale p-coloring__image"
+                      src="assets/images/footer/img-5-lg.jpg"
+                      srcset="assets/images/footer/img-5-lg.jpg, assets/images/footer/img-5-lg@2x.jpg 2x"
+                      alt=""
+                      width="432"
+                      height="1468"
+                      decoding="async"
+                    />
+                  </picture>
+                </div>
+              </div>
+            </div>
+            <!-- /.olex -->
+          </div>
+
+          <p class="p-footer__catchCopy">
+            <span class="u-visuallyHidden">さぁ、あなたも自分のCSSグリッドシステムを作ろう。</span
+            ><span class="u-wbr" data-strength="min:hard lg:soft" aria-hidden="true"
+              ><span class="js-scrollAnimation p-scrollAnimation" data-effect="zoomIn"
+                ><span class="p-scrollAnimation__element">さ</span><span class="p-scrollAnimation__element">ぁ</span
+                ><span class="p-scrollAnimation__element">、</span><span class="p-scrollAnimation__element">あ</span
+                ><span class="p-scrollAnimation__element">な</span><span class="p-scrollAnimation__element">た</span
+                ><span class="p-scrollAnimation__element">も</span><span class="p-scrollAnimation__element">自</span
+                ><span class="p-scrollAnimation__element">分</span
+                ><span class="p-scrollAnimation__element">の</span></span
+              ></span
+            ><span class="u-wbr" data-strength="min:hard lg:soft" aria-hidden="true"
+              ><span class="js-scrollAnimation p-scrollAnimation" data-effect="zoomIn" data-delay="11"
+                ><span class="p-scrollAnimation__element">C</span><span class="p-scrollAnimation__element">S</span
+                ><span class="p-scrollAnimation__element">S</span><span class="p-scrollAnimation__element">グ</span
+                ><span class="p-scrollAnimation__element">リ</span><span class="p-scrollAnimation__element">ッ</span
+                ><span class="p-scrollAnimation__element">ド</span><span class="p-scrollAnimation__element">シ</span
+                ><span class="p-scrollAnimation__element">ス</span><span class="p-scrollAnimation__element">テ</span
+                ><span class="p-scrollAnimation__element">ム</span><span class="p-scrollAnimation__element">を</span
+                ><span class="p-scrollAnimation__element">作</span><span class="p-scrollAnimation__element">ろ</span
+                ><span class="p-scrollAnimation__element">う</span
+                ><span class="p-scrollAnimation__element">。</span></span
+              ></span
+            >
+          </p>
+
+          <p class="p-footer__button" lang="en">
+            <a class="p-button -secondary -lg c-button" href="https://shibajuku.net/olex/" target="_blank"
+              >How to Make</a
+            >
+          </p>
+
+          <div class="olex">
+            <div class="olex__item" data-cols="min:12 lg:6" data-align="min:center lg:start">
+              <div class="p-footer__titleContainer">
+                <p class="p-footer__title" lang="en">Olex.css</p>
+                <p class="p-footer__subTitle" lang="en">Ore no Flexible CSS Grid System.</p>
+              </div>
+            </div>
+
+            <div class="olex__item" data-cols="min:12 lg:6" data-align="min:center lg:end lg:bottom">
+              <div class="p-footer__sns">
+                <p class="p-footer__snsTitle" lang="en">Folow Me</p>
+                <address>
+                  <ul class="p-footer__snsList">
+                    <li class="p-footer__snsListItem">
+                      <a href="#" target="_blank"
+                        ><img
+                          class="p-footer__snsListIcon"
+                          src="assets/images/icon/icon-twitter.png"
+                          srcset="assets/images/icon/icon-twitter.png, assets/images/icon/icon-twitter@2x.png 2x"
+                          alt="Twitter"
+                          decoding="async"
+                      /></a>
+                    </li>
+                    <li class="p-footer__snsListItem">
+                      <a href="#" target="_blank"
+                        ><img
+                          class="p-footer__snsListIcon"
+                          src="assets/images/icon/icon-instagram.png"
+                          srcset="assets/images/icon/icon-instagram.png, assets/images/icon/icon-instagram@2x.png 2x"
+                          alt="Instagram"
+                          decoding="async"
+                      /></a>
+                    </li>
+                  </ul>
+                </address>
+              </div>
+
+              <p class="p-footer__copyright" lang="en">
+                <small>&copy; 2021 <a href="https://shibajuku.net/contact/">Shibata Hironori</a></small>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- /.l-container -->
+      </div>
+      <!-- /.l-spacer -->
+    </footer>
+
+    <script src="assets/js/bugFix.js"></script>
+  </body>
+</html>

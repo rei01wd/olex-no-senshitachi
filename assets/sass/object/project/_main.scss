@@ -1,0 +1,60 @@
+@charset "UTF-8";
+@use "../../global" as *;
+
+/* //////////  Main  ////////// */
+.p-main {
+  background-color: $white;
+
+  &.-gray-100 {
+    background-color: $gray-100;
+  }
+
+  &.-gray-400 {
+    background-color: $gray-400;
+    color: $white;
+  }
+
+  &.-direction {
+    @include mq(md) {
+      position: relative;
+      z-index: -2;
+      background-color: $gray-100;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        width: 50%;
+        height: 100%;
+        background-color: $gray-300;
+      }
+    }
+  }
+
+  &__content {
+    font-size: remSize(14px);
+    font-size: clampSize(14px, 16px, min, xxl);
+
+    @include mq(md) {
+      font-size: remSize(16px);
+      font-size: clampSize(14px, 16px, min, xxl);
+    }
+
+    &.-center {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    margin-top: emSize(20px, 14px);
+    line-height: lhSize(32, 14px);
+    letter-spacing: lsSize(40);
+
+    @include mq(md) {
+      margin-top: emSize(32px, 16px);
+    }
+  }
+}

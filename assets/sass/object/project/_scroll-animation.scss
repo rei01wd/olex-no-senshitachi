@@ -1,0 +1,49 @@
+@charset "UTF-8";
+@use "../../global" as *;
+
+/* //////////  Scroll Animation  ////////// */
+.p-scrollAnimation {
+  &__element {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__element.is-visible,
+  &.is-visible &__element {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Zoom In */
+  &[data-effect="zoomIn"] &__element {
+    display: inline-block;
+  }
+
+  &.is-visible[data-effect="zoomIn"] &__element {
+    display: inline-block;
+    animation: fadeIn 0.18s both $easeOutSine, zoomIn 0.18s both $easeOutSine;
+
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i + 1}) {
+        $delay: $i * 0.1 + s;
+        animation-delay: $delay;
+      }
+    }
+  }
+
+  &.is-visible[data-effect="zoomIn"][data-delay="11"] &__element {
+    animation: fadeIn 0.18s both $easeOutSine, zoomIn 0.18s both $easeOutSine;
+
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        $delay: 1 + $i * 0.1 + s;
+        animation-delay: $delay;
+      }
+    }
+  }
+
+  /* Slide Up */
+  &[data-effect="slideUp"] &__element.is-visible {
+    animation: fadeIn 0.8s both $easeOutSine, slideUp 0.8s both $easeOutSine;
+  }
+}

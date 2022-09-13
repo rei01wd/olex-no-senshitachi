@@ -1,0 +1,28 @@
+@charset "UTF-8";
+@use "../../global" as *;
+
+/* //////////  Mouse Stalker  ////////// */
+.p-stalker {
+  position: fixed;
+  top: -20px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: rgba($gray-400, 0.2);
+  transition: transform 0.3s $easeOutExpo;
+  transition-property: transform, background-color, border, top, left, width, height;
+  will-change: transform;
+  pointer-events: none;
+  z-index: 999;
+
+  &.is-stalkerActive {
+    top: -60px;
+    left: -60px;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: #ccc;
+  }
+}

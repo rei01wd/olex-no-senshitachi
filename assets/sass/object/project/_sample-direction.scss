@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@use "../../global" as *;
+
+/* //////////  Sample - Direction  ////////// */
+.p-sampleDirection {
+  &__item {
+    background-color: $gray-200;
+    padding: remSize(44px) 0;
+
+    @include mq(md) {
+      padding: remSize(32px) 0;
+    }
+
+    @include mq(lg) {
+      padding: remSize(44px) 0;
+    }
+
+    @include mq(xl) {
+      padding: remSize(48px) 0;
+    }
+  }
+
+  &.-reverse &__item {
+    background-color: $gray-100;
+  }
+
+  &__itemText {
+    font-size: remSize(16px);
+    letter-spacing: lsSize(30);
+  }
+}

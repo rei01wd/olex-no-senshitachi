@@ -1,0 +1,126 @@
+@charset "UTF-8";
+@use "../../global" as *;
+
+/* //////////  Hero  ////////// */
+.p-hero {
+  font-size: remSize(14px);
+  font-size: clampSize(14px, 16px, min, md);
+  line-height: lhSize(28, 14px);
+  letter-spacing: lsSize(40);
+
+  @include mq(md) {
+    font-size: remSize(16px);
+    font-size: clampSize(14px, 16px, min, md);
+  }
+
+  @include mq(lg) {
+    font-size: clampSize(16px, 18px, md, xxl);
+  }
+
+  &__content {
+    @include mq(lg) {
+      padding-right: vwSize(40px, $pc-comp-width);
+    }
+  }
+
+  &__title {
+    font-size: remSize(36px);
+    letter-spacing: lsSize(40);
+    line-height: lhSize(54, 44px);
+
+    @include mq(xxs) {
+      font-size: remSize(44px);
+      font-size: clampSize(44px, 96px, xxs, lg);
+    }
+
+    @include mq(lg) {
+      font-size: vwSize(72px, $pc-comp-width);
+    }
+  }
+
+  &__character {
+    display: inline-block;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__title.is-visible &__character {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn 0.5s both $easeOutSine, slideIn 0.5s both $easeOutSine;
+
+    @for $i from 1 through 15 {
+      &:nth-child(#{$i + 1}) {
+        $delay: $i * 0.1 + s;
+        animation-delay: $delay;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: emSize(24px, 14px);
+
+    @include mq(lg) {
+      margin-top: emSize(64px, 16px);
+    }
+  }
+
+  &__button {
+    margin-top: emSize(40px, 14px);
+    text-align: center;
+
+    @include mq(lg) {
+      margin-top: emSize(48px, 16px);
+    }
+  }
+
+  &__visual {
+    margin-top: remSize(108px);
+    padding: remSize(40px) 0;
+    padding: clampSize(40px, 72px, min, lg) 0;
+    background-color: $gray-400;
+
+    @include mq(lg) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0;
+      padding: remSize(140px) vwSize(88px, $pc-comp-width) remSize(76px);
+      min-height: 100vh;
+    }
+  }
+
+  &__imageContainer {
+    flex-wrap: nowrap;
+
+    @include mq(lg) {
+      width: 100%;
+    }
+  }
+
+  &__imageInner {
+    perspective: 500px;
+  }
+
+  &__imagePiece {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__imageContainer.is-visible &__imagePiece {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn 0.7s both 1.2s $easeOutSine, open 0.7s both 1.2s $easeOutSine;
+
+    @for $i from 1 through 2 {
+      &:nth-child(#{$i + 1}) {
+        $delay: $i * 0.1 + 1.2s;
+        animation-delay: $delay;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+}

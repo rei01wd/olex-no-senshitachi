@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/* //////////  Card  ////////// */
+.c-card {
+  position: relative;
+
+  &__href[href] {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__content {
+    order: 1;
+  }
+
+  &__thumbnail {
+    order: -1;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}

@@ -1,0 +1,64 @@
+@charset "UTF-8";
+@use "../../global" as *;
+
+/* //////////  Heading  ////////// */
+.p-heading {
+  &.-primary {
+    font-size: remSize(32px);
+    font-size: clampSize(32px, 64px, min, xxl);
+    letter-spacing: lsSize(30);
+
+    @include mq(md) {
+      font-size: remSize(64px);
+      font-size: clampSize(32px, 64px, min, xxl);
+    }
+  }
+
+  &.-secondary {
+    font-size: remSize(24px);
+    font-size: clampSize(24px, 48px, min, xxl);
+
+    &.-normal {
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 0.7em;
+        height: 0.7em;
+        background: center / contain no-repeat url("../images/icon/icon-normal-sm.png");
+        margin-left: emSize(10px, 24px);
+
+        @include mq(lg) {
+          background-image: url("../images/icon/icon-normal-lg.png");
+          margin-left: emSize(18px, 48px);
+        }
+      }
+    }
+
+    &.-reverse {
+      text-align: right;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 0.7em;
+        height: 0.7em;
+        background: center / contain no-repeat url("../images/icon/icon-reverse-sm.png");
+        margin-right: emSize(10px, 24px);
+
+        @include mq(lg) {
+          background-image: url("../images/icon/icon-reverse-lg.png");
+          margin-right: emSize(18px, 48px);
+        }
+      }
+    }
+
+    &.-wide {
+      letter-spacing: lsSize(40);
+    }
+
+    @include mq(lg) {
+      font-size: remSize(48px);
+      font-size: clampSize(24px, 48px, min, xxl);
+    }
+  }
+}

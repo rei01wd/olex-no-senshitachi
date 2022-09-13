@@ -1,0 +1,74 @@
+@charset "UTF-8";
+@use "../global" as *;
+@use "sass:math";
+
+/*
+  container
+--------------------------------------------------------- */
+.l-container {
+  &:not([data]) {
+    width: percentage(math.div(339px, $sp-comp-width));
+    margin: 0 auto;
+  }
+
+  &[data-disabled~="min"] {
+    width: auto;
+    margin: 0;
+  }
+
+  &[data-hidden~="min"] {
+    display: contents;
+  }
+
+  @include mq(sm) {
+    &:not([data]) {
+      width: percentage(math.div(1200px, $pc-comp-width));
+    }
+
+    &[data-eabled~="sm"] {
+      width: percentage(math.div(1200px, $pc-comp-width));
+      margin: 0 auto;
+    }
+
+    &[data-disabled~="sm"] {
+      width: auto;
+      margin: 0;
+    }
+
+    &[data-hidden~="sm"] {
+      display: contents;
+    }
+  }
+
+  @include mq(lg) {
+    &[data-eabled~="lg"] {
+      width: percentage(math.div(1200px, $pc-comp-width));
+      margin: 0 auto;
+    }
+
+    &[data-disabled~="lg"] {
+      width: auto;
+      margin: 0;
+    }
+
+    &[data-hidden~="lg"] {
+      display: contents;
+    }
+  }
+
+  @include mq(xl) {
+    &[data-eabled~="xl"] {
+      width: percentage(math.div(1200px, $pc-comp-width));
+      margin: 0 auto;
+    }
+
+    &[data-disabled~="xl"] {
+      width: auto;
+      margin: 0;
+    }
+
+    &[data-hidden~="xl"] {
+      display: contents;
+    }
+  }
+}
