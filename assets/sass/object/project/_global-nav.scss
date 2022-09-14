@@ -3,8 +3,6 @@
 
 /* //////////  Global Nav  ////////// */
 .p-globalNav {
-  position: relative;
-  z-index: 10;
   font-size: remSize(32px);
   color: inherit;
   transition: transform 0.2s $easeOutSine;

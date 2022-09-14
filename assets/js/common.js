@@ -186,11 +186,11 @@ const mouseStalker = function () {
 
   linkElems.forEach((elem) => {
     elem.addEventListener("mouseenter", () => {
-      stalker.classList.add("is-stalkerActive");
+      stalker.classList.add("is-active");
     });
 
     elem.addEventListener("mouseleave", () => {
-      stalker.classList.remove("is-stalkerActive");
+      stalker.classList.remove("is-active");
     });
   });
 };
