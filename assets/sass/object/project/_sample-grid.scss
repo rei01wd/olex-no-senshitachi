@@ -23,6 +23,7 @@
     text-align: center;
     opacity: 0;
     transition: opacity 0.25s $easeOutSine;
+    pointer-events: none;
 
     @include mq(md) {
       padding: remSize(18px);
