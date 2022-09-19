@@ -5,14 +5,18 @@
 .p-globalNav {
   font-size: remSize(32px);
   color: inherit;
-  transition: transform 0.2s $easeOutSine;
+  will-change: opacity, transform;
+  opacity: 0;
   transform: scale(0.8);
+  transition: opacity 0.1s $easeOutCubic, transform 0.1s $easeOutCubic;
 
   @include mq(lg) {
     display: flex;
     align-items: center;
     font-size: remSize(16px);
-    transform: scale(1);
+    opacity: 1;
+    transform: none;
+    transition: none;
 
     & > * + * {
       margin-left: remSize(24px);

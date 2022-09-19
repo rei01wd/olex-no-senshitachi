@@ -44,7 +44,7 @@ html {
       mix-blend-mode: normal;
 
       @include mq(lg) {
-        mix-blend-mode: difference;
+        mix-blend-mode: exclusion;
       }
     }
 
@@ -54,7 +54,9 @@ html {
     }
 
     .p-globalNav {
+      opacity: 1;
       transform: scale(1);
+      transition: opacity 0.3s $easeOutCubic, transform 0.3s $easeOutCubic;
     }
 
     .p-buttonHamburger {

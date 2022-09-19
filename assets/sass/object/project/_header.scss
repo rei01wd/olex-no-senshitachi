@@ -9,7 +9,7 @@
   left: 0;
   z-index: 5;
   color: $white;
-  mix-blend-mode: difference;
+  mix-blend-mode: exclusion;
 
   &__title {
     font-size: remSize(20px);
