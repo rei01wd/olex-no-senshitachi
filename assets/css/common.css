@@ -651,6 +651,10 @@ html.is-resize .p-globalNav,
 html.is-resize .p-buttonHamburger__inner {
   transition: none;
 }
+html.is-resize .p-buttonHamburger__inner::before, html.is-resize .p-buttonHamburger__inner::after {
+  -webkit-animation-duration: 0s;
+          animation-duration: 0s;
+}
 html.is-drawerActive {
   overflow: hidden;
 }

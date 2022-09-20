@@ -30,6 +30,13 @@ html {
     .p-buttonHamburger__inner {
       transition: none;
     }
+
+    .p-buttonHamburger__inner {
+      &::before,
+      &::after {
+        animation-duration: 0s;
+      }
+    }
   }
 
   // Drawer
