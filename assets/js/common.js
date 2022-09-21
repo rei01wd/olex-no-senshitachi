@@ -98,9 +98,12 @@ const drawer = function () {
   function drawerSwitch(e) {
     if (e.matches) {
       drawer.setAttribute("aria-hidden", "false");
-      header.style.mixBlendMode = "exclusion";
     } else if (!e.matches && button.getAttribute("aria-expanded") == "false") {
       drawer.setAttribute("aria-hidden", "true");
+    }
+
+    if (e.matches) {
+      header.style.mixBlendMode = "exclusion";
     } else if (!e.matches && button.getAttribute("aria-expanded") == "true") {
       header.style.mixBlendMode = "normal";
     }
