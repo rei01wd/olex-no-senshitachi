@@ -59,36 +59,68 @@ const drawer = function () {
   const button = document.querySelector(".js-buttonHamburger");
   const drawer = document.getElementById("js-drawer");
   const globalNavHref = document.querySelectorAll(".js-globalNavHref");
+  const header = document.querySelector(".js-header");
 
-  // buttonをクリックしたら、htmlのis-drawerActiveクラスの付け外し、buttonとdrawerのWAI_ARIA属性の切り替えをする
+  // buttonをクリックしたら、以下の処理を実行する
   button.addEventListener("click", () => {
-    const isExpanded = button.getAttribute("aria-expanded") !== "false";
-    button.setAttribute("aria-expanded", !isExpanded);
+    function toggleDrawerClass(callback) {
+      // buttonのWAI-ARIA属性を切り替える
+      const isExpanded = button.getAttribute("aria-expanded") !== "false";
+      button.setAttribute("aria-expanded", !isExpanded);
 
-    const isHidden = drawer.getAttribute("aria-hidden") !== "false";
-    drawer.setAttribute("aria-hidden", !isHidden);
+      // drawerのWAI-ARIA属性を切り替える
+      const isHidden = drawer.getAttribute("aria-hidden") !== "false";
+      drawer.setAttribute("aria-hidden", !isHidden);
 
-    document.documentElement.classList.toggle("is-drawerActive");
+      // htmlにis-drawerActiveクラスを付ける
+      document.documentElement.classList.toggle("is-drawerActive");
+
+      callback();
+    }
+
+    // 上記の処理が終わったら、headerのmix-blend-modeを切り替える
+    toggleDrawerClass(function () {
+      if (button.getAttribute("aria-expanded") == "true") {
+        // ドロワーを開くとき
+        header.style.mixBlendMode = "normal";
+      } else {
+        // ドロワーを閉じるとき
+        setTimeout(() => {
+          header.style.mixBlendMode = "exclusion";
+        }, 80);
+      }
+    });
   });
 
-  // 992pxのブレイクポイントで、drawerのWAI-ARIA属性を切り替える
+  // 992pxのブレイクポイントで、buttonのWAI-ARIA属性、headerのmix-blend-modeを切り替える
   const breakPoint = window.matchMedia("(min-width: 992px)");
 
   function drawerSwitch(e) {
     if (e.matches) {
       drawer.setAttribute("aria-hidden", "false");
+      header.style.mixBlendMode = "exclusion";
     } else if (!e.matches && button.getAttribute("aria-expanded") == "false") {
       drawer.setAttribute("aria-hidden", "true");
+    } else if (!e.matches && button.getAttribute("aria-expanded") == "true") {
+      header.style.mixBlendMode = "normal";
     }
   }
 
   breakPoint.addEventListener("change", drawerSwitch);
   drawerSwitch(breakPoint);
 
-  // ドロワー展開時にリンクをクリックしたら、htmlのis-drawerActiveクラスを外し、buttonとdrawerのWAI_ARIA属性を切り替える
+  // ドロワー展開時にリンクをクリックしたら、以下の処理を実行する
   globalNavHref.forEach((elem) => {
     elem.addEventListener("click", () => {
+      // htmlのis-drawerActiveクラスを外す
       document.documentElement.classList.remove("is-drawerActive");
+
+      // headerのmix-blend-modeをexclusionに切り替える
+      setTimeout(() => {
+        header.style.mixBlendMode = "exclusion";
+      }, 80);
+
+      // buttonとdrawerのWAI_ARIA属性を切り替える
       button.setAttribute("aria-expanded", "false");
 
       if (breakPoint.matches) {

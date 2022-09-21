@@ -47,23 +47,16 @@ html {
       overflow: visible;
     }
 
-    .p-header {
-      mix-blend-mode: normal;
-
-      @include mq(lg) {
-        mix-blend-mode: exclusion;
-      }
-    }
-
     .p-drawer {
       opacity: 1;
       visibility: visible;
+      transition: opacity 0.25s $easeOutSine, visibility 0.25s $easeOutSine;
     }
 
     .p-globalNav {
       opacity: 1;
       transform: scale(1);
-      transition: opacity 0.3s $easeOutCubic, transform 0.3s $easeOutCubic;
+      transition: opacity 0.35s $easeOutCubic, transform 0.35s $easeOutCubic;
     }
 
     .p-buttonHamburger {
