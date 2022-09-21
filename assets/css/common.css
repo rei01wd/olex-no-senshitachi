@@ -651,6 +651,10 @@ html.is-resize .p-globalNav,
 html.is-resize .p-buttonHamburger__inner {
   transition: none;
 }
+html.is-resize .p-buttonHamburger__inner::before, html.is-resize .p-buttonHamburger__inner::after {
+  -webkit-animation-duration: 0s;
+          animation-duration: 0s;
+}
 html.is-drawerActive {
   overflow: hidden;
 }
@@ -659,20 +663,15 @@ html.is-drawerActive {
     overflow: visible;
   }
 }
-html.is-drawerActive .p-header {
-  mix-blend-mode: normal;
-}
-@media screen and (min-width: 992px) {
-  html.is-drawerActive .p-header {
-    mix-blend-mode: difference;
-  }
-}
 html.is-drawerActive .p-drawer {
   opacity: 1;
   visibility: visible;
+  transition: opacity 0.25s cubic-bezier(0.61, 1, 0.88, 1), visibility 0.25s cubic-bezier(0.61, 1, 0.88, 1);
 }
 html.is-drawerActive .p-globalNav {
+  opacity: 1;
   transform: scale(1);
+  transition: opacity 0.35s cubic-bezier(0.33, 1, 0.68, 1), transform 0.35s cubic-bezier(0.33, 1, 0.68, 1);
 }
 html.is-drawerActive .p-buttonHamburger:hover .p-buttonHamburger__inner, html.is-drawerActive .p-buttonHamburger:focus .p-buttonHamburger__inner {
   background-color: transparent;
@@ -4762,7 +4761,7 @@ body {
   left: 0;
   z-index: 5;
   color: #ffffff;
-  mix-blend-mode: difference;
+  mix-blend-mode: exclusion;
 }
 .p-header__title {
   font-size: 1.25rem;
@@ -4901,7 +4900,7 @@ body {
   background-color: #101010;
   overflow: auto;
   will-change: opacity, visibility;
-  transition: opacity 0.3s cubic-bezier(0.61, 1, 0.88, 1), visibility 0.3s cubic-bezier(0.61, 1, 0.88, 1);
+  transition: opacity 0.28s cubic-bezier(0.61, 1, 0.88, 1), visibility 0.28s cubic-bezier(0.61, 1, 0.88, 1);
   opacity: 0;
   visibility: hidden;
 }
@@ -4914,6 +4913,7 @@ body {
     overflow: visible;
     opacity: 1;
     visibility: visible;
+    transition: none;
   }
 }
 
@@ -4921,15 +4921,19 @@ body {
 .p-globalNav {
   font-size: 2rem;
   color: inherit;
-  transition: transform 0.2s cubic-bezier(0.61, 1, 0.88, 1);
+  will-change: opacity, transform;
+  opacity: 0;
   transform: scale(0.8);
+  transition: opacity 0.1s cubic-bezier(0.33, 1, 0.68, 1), transform 0.1s cubic-bezier(0.33, 1, 0.68, 1);
 }
 @media screen and (min-width: 992px) {
   .p-globalNav {
     display: flex;
     align-items: center;
     font-size: 1rem;
-    transform: scale(1);
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
   .p-globalNav > * + * {
     margin-left: 1.5rem;
@@ -5303,12 +5307,11 @@ body {
   display: inline-block;
   width: 0.7em;
   height: 0.7em;
-  background: center/contain no-repeat url("../images/icon/icon-normal-sm.png");
+  background: center/contain no-repeat url("../images/icon/icon-normal.png");
   margin-left: 0.4166666667em;
 }
 @media screen and (min-width: 992px) {
   .p-heading.-secondary.-normal::after {
-    background-image: url("../images/icon/icon-normal-lg.png");
     margin-left: 0.375em;
   }
 }
@@ -5320,12 +5323,11 @@ body {
   display: inline-block;
   width: 0.7em;
   height: 0.7em;
-  background: center/contain no-repeat url("../images/icon/icon-reverse-sm.png");
+  background: center/contain no-repeat url("../images/icon/icon-reverse.png");
   margin-right: 0.4166666667em;
 }
 @media screen and (min-width: 992px) {
   .p-heading.-secondary.-reverse::before {
-    background-image: url("../images/icon/icon-reverse-lg.png");
     margin-right: 0.375em;
   }
 }

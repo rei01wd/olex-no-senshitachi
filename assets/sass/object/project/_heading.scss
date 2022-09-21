@@ -24,11 +24,10 @@
         display: inline-block;
         width: 0.7em;
         height: 0.7em;
-        background: center / contain no-repeat url("../images/icon/icon-normal-sm.png");
+        background: center / contain no-repeat url("../images/icon/icon-normal.png");
         margin-left: emSize(10px, 24px);
 
         @include mq(lg) {
-          background-image: url("../images/icon/icon-normal-lg.png");
           margin-left: emSize(18px, 48px);
         }
       }
@@ -42,11 +41,10 @@
         display: inline-block;
         width: 0.7em;
         height: 0.7em;
-        background: center / contain no-repeat url("../images/icon/icon-reverse-sm.png");
+        background: center / contain no-repeat url("../images/icon/icon-reverse.png");
         margin-right: emSize(10px, 24px);
 
         @include mq(lg) {
-          background-image: url("../images/icon/icon-reverse-lg.png");
           margin-right: emSize(18px, 48px);
         }
       }

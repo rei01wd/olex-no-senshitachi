@@ -14,7 +14,7 @@
   background-color: $gray-400;
   overflow: auto;
   will-change: opacity, visibility;
-  transition: opacity 0.3s $easeOutSine, visibility 0.3s $easeOutSine;
+  transition: opacity 0.28s $easeOutSine, visibility 0.28s $easeOutSine;
   opacity: 0;
   visibility: hidden;
 
@@ -26,5 +26,6 @@
     overflow: visible;
     opacity: 1;
     visibility: visible;
+    transition: none;
   }
 }
