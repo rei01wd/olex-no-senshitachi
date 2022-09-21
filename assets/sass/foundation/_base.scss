@@ -87,6 +87,15 @@ html {
         }
       }
     }
+
+    &.is-resize {
+      .p-buttonHamburger__inner {
+        &::before,
+        &::after {
+          animation-duration: 0s;
+        }
+      }
+    }
   }
 }
 

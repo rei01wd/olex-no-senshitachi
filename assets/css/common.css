@@ -693,6 +693,10 @@ html.is-drawerActive .p-buttonHamburger__inner::after {
   -webkit-animation: hamburgerBottom 0.3s forwards cubic-bezier(0.61, 1, 0.88, 1);
           animation: hamburgerBottom 0.3s forwards cubic-bezier(0.61, 1, 0.88, 1);
 }
+html.is-drawerActive.is-resize .p-buttonHamburger__inner::before, html.is-drawerActive.is-resize .p-buttonHamburger__inner::after {
+  -webkit-animation-duration: 0s;
+          animation-duration: 0s;
+}
 
 body {
   font-family: Montserrat, 游ゴシック体, YuGothic, 游ゴシック, "Yu Gothic", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
