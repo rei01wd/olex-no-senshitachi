@@ -25,6 +25,7 @@ html {
 
   // Resize
   &.is-resize {
+    body::before,
     .p-drawer,
     .p-globalNav,
     .p-buttonHamburger__inner {
@@ -47,10 +48,25 @@ html {
       overflow: visible;
     }
 
-    .p-drawer {
+    body::before {
+      z-index: 1;
       opacity: 1;
+      transition: opacity 0.25s $easeOutSine;
+    }
+
+    .p-header {
+      mix-blend-mode: normal;
+
+      @include mq(lg) {
+        mix-blend-mode: exclusion;
+      }
+    }
+
+    .p-drawer {
+      // opacity: 1;
       visibility: visible;
-      transition: opacity 0.25s $easeOutSine, visibility 0.25s $easeOutSine;
+      // transition: opacity 0.25s $easeOutSine, visibility 0.25s $easeOutSine;
+      transition: visibility 0.25s $easeOutSine;
     }
 
     .p-globalNav {
@@ -100,8 +116,34 @@ html {
 }
 
 body {
+  position: relative;
   font-family: $font-set-primary-en, $font-set-primary-ja, $font-set-secondary;
   font-weight: 700;
   background-color: $white;
   color: $black;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $gray-400;
+    will-change: opacity;
+    backface-visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s $easeOutSine;
+
+    @include mq(lg) {
+      position: static;
+      width: auto;
+      height: auto;
+      opacity: 1;
+      transition: none;
+    }
+  }
 }

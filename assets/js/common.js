@@ -59,11 +59,11 @@ const drawer = function () {
   const button = document.querySelector(".js-buttonHamburger");
   const drawer = document.getElementById("js-drawer");
   const globalNavHref = document.querySelectorAll(".js-globalNavHref");
-  const header = document.querySelector(".js-header");
+  // const header = document.querySelector(".js-header");
 
   // buttonをクリックしたら、以下の処理を実行する
   button.addEventListener("click", () => {
-    function toggleDrawerClass(callback) {
+    function toggleDrawerClass() {
       // buttonのWAI-ARIA属性を切り替える
       const isExpanded = button.getAttribute("aria-expanded") !== "false";
       button.setAttribute("aria-expanded", !isExpanded);
@@ -75,21 +75,23 @@ const drawer = function () {
       // htmlにis-drawerActiveクラスを付ける
       document.documentElement.classList.toggle("is-drawerActive");
 
-      callback();
+      // callback();
     }
 
     // 上記の処理が終わったら、headerのmix-blend-modeを切り替える
-    toggleDrawerClass(function () {
-      if (button.getAttribute("aria-expanded") == "true") {
-        // ドロワーを開くとき
-        header.style.mixBlendMode = "normal";
-      } else {
-        // ドロワーを閉じるとき
-        setTimeout(() => {
-          header.style.mixBlendMode = "exclusion";
-        }, 80);
-      }
-    });
+    // toggleDrawerClass(function () {
+    //   if (button.getAttribute("aria-expanded") == "true") {
+    //     // ドロワーを開くとき
+    //     header.style.mixBlendMode = "normal";
+    //   } else {
+    //     // ドロワーを閉じるとき
+    //     setTimeout(() => {
+    //       header.style.mixBlendMode = "exclusion";
+    //     }, 80);
+    //   }
+    // });
+
+    toggleDrawerClass();
   });
 
   // 992pxのブレイクポイントで、buttonのWAI-ARIA属性、headerのmix-blend-modeを切り替える
@@ -102,11 +104,11 @@ const drawer = function () {
       drawer.setAttribute("aria-hidden", "true");
     }
 
-    if (e.matches) {
-      header.style.mixBlendMode = "exclusion";
-    } else if (!e.matches && button.getAttribute("aria-expanded") == "true") {
-      header.style.mixBlendMode = "normal";
-    }
+    // if (e.matches) {
+    //   header.style.mixBlendMode = "exclusion";
+    // } else if (!e.matches && button.getAttribute("aria-expanded") == "true") {
+    //   header.style.mixBlendMode = "normal";
+    // }
   }
 
   breakPoint.addEventListener("change", drawerSwitch);
@@ -119,9 +121,9 @@ const drawer = function () {
       document.documentElement.classList.remove("is-drawerActive");
 
       // headerのmix-blend-modeをexclusionに切り替える
-      setTimeout(() => {
-        header.style.mixBlendMode = "exclusion";
-      }, 80);
+      // setTimeout(() => {
+      //   header.style.mixBlendMode = "exclusion";
+      // }, 80);
 
       // buttonとdrawerのWAI_ARIA属性を切り替える
       button.setAttribute("aria-expanded", "false");

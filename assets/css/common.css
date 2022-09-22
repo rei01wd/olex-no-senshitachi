@@ -646,6 +646,7 @@ html.is-jsEnabled.is-loaded .p-loading {
   opacity: 0;
   visibility: hidden;
 }
+html.is-resize body::before,
 html.is-resize .p-drawer,
 html.is-resize .p-globalNav,
 html.is-resize .p-buttonHamburger__inner {
@@ -663,10 +664,22 @@ html.is-drawerActive {
     overflow: visible;
   }
 }
-html.is-drawerActive .p-drawer {
+html.is-drawerActive body::before {
+  z-index: 1;
   opacity: 1;
+  transition: opacity 0.25s cubic-bezier(0.61, 1, 0.88, 1);
+}
+html.is-drawerActive .p-header {
+  mix-blend-mode: normal;
+}
+@media screen and (min-width: 992px) {
+  html.is-drawerActive .p-header {
+    mix-blend-mode: exclusion;
+  }
+}
+html.is-drawerActive .p-drawer {
   visibility: visible;
-  transition: opacity 0.25s cubic-bezier(0.61, 1, 0.88, 1), visibility 0.25s cubic-bezier(0.61, 1, 0.88, 1);
+  transition: visibility 0.25s cubic-bezier(0.61, 1, 0.88, 1);
 }
 html.is-drawerActive .p-globalNav {
   opacity: 1;
@@ -699,10 +712,37 @@ html.is-drawerActive.is-resize .p-buttonHamburger__inner::before, html.is-drawer
 }
 
 body {
+  position: relative;
   font-family: Montserrat, 游ゴシック体, YuGothic, 游ゴシック, "Yu Gothic", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-weight: 700;
   background-color: #ffffff;
   color: #000000;
+}
+body::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #101010;
+  will-change: opacity;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s cubic-bezier(0.61, 1, 0.88, 1);
+}
+@media screen and (min-width: 992px) {
+  body::before {
+    position: static;
+    width: auto;
+    height: auto;
+    opacity: 1;
+    transition: none;
+  }
 }
 
 /*
@@ -4632,6 +4672,7 @@ body {
   font-size: inherit;
   text-align: center;
   text-decoration: none;
+  vertical-align: bottom;
   color: inherit;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -4901,21 +4942,19 @@ body {
   z-index: -1;
   width: 100%;
   height: 100%;
-  background-color: #101010;
-  overflow: auto;
-  will-change: opacity, visibility;
-  transition: opacity 0.28s cubic-bezier(0.61, 1, 0.88, 1), visibility 0.28s cubic-bezier(0.61, 1, 0.88, 1);
-  opacity: 0;
+  overflow-y: auto;
+  will-change: visibility;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   visibility: hidden;
+  transition: visibility 0.2s cubic-bezier(0.61, 1, 0.88, 1);
 }
 @media screen and (min-width: 992px) {
   .p-drawer {
     position: static;
     width: auto;
     height: auto;
-    background-color: transparent;
-    overflow: visible;
-    opacity: 1;
+    overflow-y: visible;
     visibility: visible;
     transition: none;
   }
@@ -4926,9 +4965,11 @@ body {
   font-size: 2rem;
   color: inherit;
   will-change: opacity, transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   opacity: 0;
   transform: scale(0.8);
-  transition: opacity 0.1s cubic-bezier(0.33, 1, 0.68, 1), transform 0.1s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: opacity 0.15s cubic-bezier(0.33, 1, 0.68, 1), transform 0.15s cubic-bezier(0.33, 1, 0.68, 1);
 }
 @media screen and (min-width: 992px) {
   .p-globalNav {
